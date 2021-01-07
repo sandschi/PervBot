@@ -33,8 +33,9 @@ async def on_message(message):
         return
 
     if "!b" in message.content:
-        await message.channel.send('Das fälschung Niederlander geht: ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß')
+        await message.channel.send('Das fälschung Niederlander geht: bbb')
 
+#dadjoke
 #@client.event
 #async def on_message(message):
 #   if message.author == client.user:
@@ -57,6 +58,19 @@ async def on_message(message):
       insult = requests.get('https://evilinsult.com/generate_insult.php?lang=en&type=text')
       await message.channel.send(insult.text)
 
+@client.event
+async def on_message(message):
+    if message.author == client.user:
+        return
+
+    if "die" in message.content:
+            await message.channel.send(file=discord.File('passaway.gif'))
+
+
 
 keep_alive()
 client.run(os.getenv('TOKEN'))
+
+
+
+
