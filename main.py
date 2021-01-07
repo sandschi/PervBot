@@ -26,51 +26,28 @@ async def on_message(message):
     if "ß" in message.content:
         await message.channel.send('Das fälschung Niederlander geht: ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß')
 
-#!b maybe that works
-@client.event
-async def on_message(message):
-    if message.author == client.user:
-        return
-
     if "!b" in message.content:
-        await message.channel.send('Das fälschung Niederlander geht: bbb')
-
-#dadjoke
-#@client.event
-#async def on_message(message):
-#   if message.author == client.user:
-#       return
-#
-#    if "dad" in message.content:
-#     dadjoke = request.get('')
-#     await message.channel.send(dadjoke)
-
-@client.event
-async def on_message_delete(message):    
-   await message.channel.send('I saw that! :eyes:')   
-
-@client.event
-async def on_message(message):
-    if message.author == client.user:
-        return
+        await message.channel.send('Lisa goes: ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß')
 
     if "insult me" in message.content:
       insult = requests.get('https://evilinsult.com/generate_insult.php?lang=en&type=text')
       await message.channel.send(insult.text)
 
-@client.event
-async def on_message(message):
-    if message.author == client.user:
-        return
-
     if "die" in message.content:
-            await message.channel.send(file=discord.File('passaway.gif'))
+      await message.channel.send(file=discord.File('passaway.gif'))
+    
+    if "i hate you" in message.content:
+      await message.channel.send(file=discord.File('ihateyou.gif'))
+ 
+#dadjoke
+#    if "dad" in message.content:
+#     dadjoke = request.get('https://icanhazdadjoke.com/')
+#     await message.channel.send(dadjoke.text)
 
+@client.event
+async def on_message_delete(message):    
+   await message.channel.send('I saw that! :eyes:')   
 
 
 keep_alive()
 client.run(os.getenv('TOKEN'))
-
-
-
-
