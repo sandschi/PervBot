@@ -1,10 +1,16 @@
 import discord
 import os 
 from keep_alive import keep_alive 
-
+import logging 
 import requests 
 client = discord.Client()
 
+#logging
+logger = logging.getLogger('discord')
+logger.setLevel(logging.DEBUG)
+handler = logging.FileHandler(filename='discord.log', encoding='utf-8', mode='w')
+handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:%(name)s: %(message)s'))
+logger.addHandler(handler)
 
 
 @client.event
@@ -18,6 +24,15 @@ async def on_message(message):
         return
 
     if "ß" in message.content:
+        await message.channel.send('Das fälschung Niederlander geht: ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß')
+
+#!b maybe that works
+@client.event
+async def on_message(message):
+    if message.author == client.user:
+        return
+
+    if "!b" in message.content:
         await message.channel.send('Das fälschung Niederlander geht: ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß')
 
 #@client.event
