@@ -35,7 +35,10 @@ async def on_message(message):
 
     if "die" in message.content:
       await message.channel.send(file=discord.File('passaway.gif'))
-
+    
+    if "i hate you" in message.content:
+      await message.channel.send(file=discord.File('ihateyou.gif'))
+ 
 #dadjoke
 #    if "dad" in message.content:
 #     dadjoke = request.get('https://icanhazdadjoke.com/')
