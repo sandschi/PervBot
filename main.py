@@ -50,7 +50,6 @@ async def on_message(message):
     if "poop" in message.content:
         await message.add_reaction('💩')
       
-
     if "hot" in message.content:
         await message.add_reaction('🔥')
         await message.add_reaction('🚒')
@@ -58,7 +57,6 @@ async def on_message(message):
         await message.add_reaction('🇴')
         await message.add_reaction('🇹')
         
-
     if "snow" in message.content:
             await message.add_reaction('❄️')
 
@@ -69,7 +67,10 @@ async def on_message(message):
     
     if "mask" in message.content:
             await message.add_reaction('😷')
- 
+        
+    if "potentie" in message.content:
+      await message.channel.send(file=discord.File('potentie.gif'))
+    
 #dadjoke
 #    if "dad" in message.content:
 #     dadjoke = request.get('https://icanhazdadjoke.com/')
