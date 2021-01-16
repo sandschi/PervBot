@@ -4,6 +4,7 @@ from keep_alive import keep_alive
 #import logging 
 import requests 
 client = discord.Client()
+import time
 
 #logging
 #logger = logging.getLogger('discord')
@@ -29,6 +30,8 @@ async def on_message(message):
         await message.channel.send('Das fälschung Niederlander geht: ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß')
 
     if "!b" in message.content:
+      async with message.channel.typing():
+        time.sleep(1)
         await message.channel.send('Lisa goes: ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß')
 
     if "insult me" in message.content:
@@ -37,16 +40,24 @@ async def on_message(message):
         await message.channel.send(insult.text)
 
     if "die" in message.content:
-      await message.channel.send(file=discord.File('passaway.gif'))
+      async with message.channel.typing():
+       await message.channel.send(file=discord.File('passaway.gif'))
     
     if "i hate you" in message.content:
-      await message.channel.send(file=discord.File('ihateyou.gif'))
+      async with message.channel.typing():
+       await message.channel.send(file=discord.File('ihateyou.gif'))
 
     if "poop" in message.content:
-      #emojia = client.get_emoji(741966627834429450)
-      #print(emoji)
-      await message.add_reaction('💩')
-      #await message.add_reaction(emojia)
+        await message.add_reaction('💩')
+      
+
+    if "hot" in message.content:
+        await message.add_reaction('🔥')
+        await message.add_reaction('🚒')
+        await message.add_reaction('🇭')
+        await message.add_reaction('🇴')
+        await message.add_reaction('🇹')
+        
 
     if "snow" in message.content:
             await message.add_reaction('❄️')
@@ -55,7 +66,9 @@ async def on_message(message):
             await message.add_reaction('👓')        
             await message.add_reaction('🕶️')  
             await message.add_reaction('🥽')  
-   
+    
+    if "mask" in message.content:
+            await message.add_reaction('😷')
  
 #dadjoke
 #    if "dad" in message.content:
