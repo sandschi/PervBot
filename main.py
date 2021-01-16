@@ -17,6 +17,8 @@ client = discord.Client()
 async def on_ready():
     print('We have logged in as {0.user}'.format(client))
     await client.change_presence(activity=discord.Game(name='with himself'))
+    for emoji in client.emojis:
+        print("Name:", emoji.name + ",", "ID:", emoji.id)
 
 @client.event
 async def on_message(message):
@@ -30,14 +32,30 @@ async def on_message(message):
         await message.channel.send('Lisa goes: ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß')
 
     if "insult me" in message.content:
-      insult = requests.get('https://evilinsult.com/generate_insult.php?lang=en&type=text')
-      await message.channel.send(insult.text)
+       async with message.channel.typing():
+        insult = requests.get('https://evilinsult.com/generate_insult.php?lang=en&type=text')
+        await message.channel.send(insult.text)
 
     if "die" in message.content:
       await message.channel.send(file=discord.File('passaway.gif'))
     
     if "i hate you" in message.content:
       await message.channel.send(file=discord.File('ihateyou.gif'))
+
+    if "poop" in message.content:
+      #emojia = client.get_emoji(741966627834429450)
+      #print(emoji)
+      await message.add_reaction('💩')
+      #await message.add_reaction(emojia)
+
+    if "snow" in message.content:
+            await message.add_reaction('❄️')
+
+    if "glasses" in message.content:
+            await message.add_reaction('👓')        
+            await message.add_reaction('🕶️')  
+            await message.add_reaction('🥽')  
+   
  
 #dadjoke
 #    if "dad" in message.content:
