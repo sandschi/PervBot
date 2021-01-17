@@ -18,8 +18,8 @@ import time
 async def on_ready():
     print('We have logged in as {0.user}'.format(client))
     await client.change_presence(activity=discord.Game(name='with himself'))
-    for emoji in client.emojis:
-        print("Name:", emoji.name + ",", "ID:", emoji.id)
+    #for emoji in client.emojis:
+        #print("Name:", emoji.name + ",", "ID:", emoji.id)
 
 @client.event
 async def on_message(message):
@@ -70,6 +70,9 @@ async def on_message(message):
     if "potentie" in message.content:
       await message.channel.send(file=discord.File('potentie.gif'))
 
+    if "@" in message.content:
+      await message.channel.send(file=discord.File('ping.gif'))  
+
     if "please wait" in message.content:
       await message.channel.send(file=discord.File('wait.gif'))  
     
@@ -88,7 +91,7 @@ async def on_message(message):
        embed.add_field(name="snow", value="❄️", inline=True)
        embed.add_field(name="glasses ", value="get glasses", inline=True)
        embed.add_field(name="mask", value="😷", inline=True)
-       embed.set_footer(text="BOT VER 0.0.04 Absolutely not Beta ")
+       embed.set_footer(text="BOT VER 0.0.05 Absolutely not Beta ")
        await message.channel.send(embed=embed)
 
 
