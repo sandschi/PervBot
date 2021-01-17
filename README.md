@@ -8,8 +8,7 @@ i just started but hey we'll see
 
 Features:
 
-you can tell the bot to Insult you by typing "Insult me"
-Message Deletion watcher "I saw That 👀"
+just use the !help in Discord!
 
 Important: This Bot uses a Bot Token from Discord, 
 you will need to create a ".env" file ans Paste your Token in it:
