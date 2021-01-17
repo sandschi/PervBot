@@ -25,6 +25,10 @@ async def on_ready():
 async def on_message(message):
     if message.author == client.user:
         return
+    elif message.author.id == 664508672713424926:
+        print('Message')
+        return 
+
 
     if "ß" in message.content:
         await message.channel.send('Das fälschung Niederlander geht: ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß')
@@ -91,7 +95,7 @@ async def on_message(message):
        embed.add_field(name="snow", value="❄️", inline=True)
        embed.add_field(name="glasses ", value="get glasses", inline=True)
        embed.add_field(name="mask", value="😷", inline=True)
-       embed.set_footer(text="BOT VER 0.0.05 Absolutely not Beta ")
+       embed.set_footer(text="BOT VER 0.0.06 Absolutely not Beta ")
        await message.channel.send(embed=embed)
 
 
