@@ -69,6 +69,9 @@ async def on_message(message):
         
     if "potentie" in message.content:
       await message.channel.send(file=discord.File('potentie.gif'))
+
+    if "please wait" in message.content:
+      await message.channel.send(file=discord.File('wait.gif'))  
     
     if "!help" in message.content: 
        embed=discord.Embed(title="made by sandschi", url="https://twitch.tv/sandschi", description="Bot Features", color=0x0fe628)
@@ -85,7 +88,7 @@ async def on_message(message):
        embed.add_field(name="snow", value="❄️", inline=True)
        embed.add_field(name="glasses ", value="get glasses", inline=True)
        embed.add_field(name="mask", value="😷", inline=True)
-       embed.set_footer(text="BOT VER 0.0.03 Absolutely not Beta ")
+       embed.set_footer(text="BOT VER 0.0.04 Absolutely not Beta ")
        await message.channel.send(embed=embed)
 
 
