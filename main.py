@@ -31,7 +31,6 @@ async def on_message(message):
 
     if "!b" in message.content:
       async with message.channel.typing():
-        time.sleep(1)
         await message.channel.send('Lisa goes: ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß')
 
     if "insult me" in message.content:
@@ -71,6 +70,25 @@ async def on_message(message):
     if "potentie" in message.content:
       await message.channel.send(file=discord.File('potentie.gif'))
     
+    if "!help" in message.content: 
+       embed=discord.Embed(title="made by sandschi", url="https://twitch.tv/sandschi", description="Bot Features", color=0x0fe628)
+       embed.set_author(name="Bot Help")
+       embed.add_field(name="!help", value="brings up help file", inline=True)
+       embed.add_field(name="!b ", value="Lisa goes: ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß", inline=True)
+       embed.add_field(name="insult me ", value="you will be insulted", inline=True)
+       embed.add_field(name=" die", value="posts a gif ", inline=True)
+       embed.add_field(name=" i hate you ", value="posts another gif", inline=True)
+       embed.add_field(name="poop", value="💩", inline=True)
+       embed.add_field(name=" ß", value="blame yowey for that one, try  and find out ", inline=True)
+       embed.add_field(name="potentie ", value="¯\_༼ ಥ ‿ ಥ ༽_/¯", inline=True)
+       embed.add_field(name="hot", value="🔥🚒 🇭 🇴  🇹", inline=True)
+       embed.add_field(name="snow", value="❄️", inline=True)
+       embed.add_field(name="glasses ", value="get glasses", inline=True)
+       embed.add_field(name="mask", value="😷", inline=True)
+       embed.set_footer(text="BOT VER 0.0.03 Absolutely not Beta ")
+       await message.channel.send(embed=embed)
+
+
 #dadjoke
 #    if "dad" in message.content:
 #     dadjoke = request.get('https://icanhazdadjoke.com/')
