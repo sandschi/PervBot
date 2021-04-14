@@ -26,12 +26,19 @@ async def on_message(message):
     if message.author == client.user:
         return
     elif message.author.id == 664508672713424926:
-        print('Message')
+        print('Ignored Pokemeow')
         return 
-
+    elif message.author.id == 490707751832649738:
+        print('Ignored Taco')
+        return 
 
     if "ß" in message.content:
         await message.channel.send('Das fälschung Niederlander geht: ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß')
+    
+    elif "!buy" in message.content:
+      async with message.channel.typing():
+        await message.add_reaction('✅')
+        return
 
     if "!b" in message.content:
       async with message.channel.typing():
