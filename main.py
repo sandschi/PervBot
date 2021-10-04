@@ -31,63 +31,73 @@ async def on_message(message):
     elif message.author.id == 490707751832649738:
         print('Ignored Taco')
         return 
-
+    if message.channel.id == 831789312378667028:
+        print('Ignored Tacochannel')
+        return
+    if message.channel.id == 832178751709118524:
+      print('Ignored Customerchannel')
+      return
+    if message.channel.id == 832220565414477884:
+      print('Ignored Franchisechannel')
+      return    
     if "ß" in message.content:
         await message.channel.send('Das fälschung Niederlander geht: ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß')
     
-    elif "!buy" in message.content:
-      async with message.channel.typing():
-        await message.add_reaction('✅')
-        return
+    elif "!buy" in message.content.lower():
+      return
 
-    if "!b" in message.content:
+    if "!lisa" in message.content:
       async with message.channel.typing():
         await message.channel.send('Lisa goes: ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß')
 
-    if "insult me" in message.content:
+    if "insult me" in message.content.lower():
        async with message.channel.typing():
         insult = requests.get('https://evilinsult.com/generate_insult.php?lang=en&type=text')
         await message.channel.send(insult.text)
 
-    if "die" in message.content:
+    if "die" in message.content.lower():
       async with message.channel.typing():
        await message.channel.send(file=discord.File('passaway.gif'))
     
-    if "i hate you" in message.content:
+    if "i hate you" in message.content.lower():
       async with message.channel.typing():
        await message.channel.send(file=discord.File('ihateyou.gif'))
 
-    if "poop" in message.content:
+    if "poop" in message.content.lower():
         await message.add_reaction('💩')
       
-    if "hot" in message.content:
+    if "hot" in message.content.lower():
         await message.add_reaction('🔥')
         await message.add_reaction('🚒')
         await message.add_reaction('🇭')
         await message.add_reaction('🇴')
         await message.add_reaction('🇹')
         
-    if "snow" in message.content:
+    if "tomika" in message.content.lower():
+        await message.add_reaction('🤮')
+        await message.add_reaction('🤢')
+
+    if "snow" in message.content.lower():
             await message.add_reaction('❄️')
 
-    if "glasses" in message.content:
+    if "glasses" in message.content.lower():
             await message.add_reaction('👓')        
             await message.add_reaction('🕶️')  
             await message.add_reaction('🥽')  
     
-    if "mask" in message.content:
+    if "mask" in message.content.lower():
             await message.add_reaction('😷')
         
-    if "potentie" in message.content:
+    if "potentie" in message.content.lower():
       await message.channel.send(file=discord.File('potentie.gif'))
 
-    if "@" in message.content:
-      await message.channel.send(file=discord.File('ping.gif'))  
+   # if "@" in message.content:
+   #   await message.channel.send(file=discord.File('ping.gif'))  
 
-    if "please wait" in message.content:
+    if "please wait" in message.content.lower():
       await message.channel.send(file=discord.File('wait.gif'))  
     
-    if "!help" in message.content: 
+    if "!help" in message.content.lower(): 
        embed=discord.Embed(title="made by sandschi", url="https://twitch.tv/sandschi", description="Bot Features", color=0x0fe628)
        embed.set_author(name="Bot Help")
        embed.add_field(name="!help", value="brings up help file", inline=True)
